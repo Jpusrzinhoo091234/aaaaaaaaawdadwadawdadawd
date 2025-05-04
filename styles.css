@@ -22,12 +22,20 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1 {
@@ -407,6 +415,20 @@ select.input-entrega option {
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        max-width: 900px;
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 90%;
+        max-width: 800px;
+        padding: 25px;
+    }
+}
+
 @media (max-width: 768px) {
     .container {
         padding: 10px;
@@ -414,16 +436,79 @@ select.input-entrega option {
 
     h1 {
         font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    h3 {
+        font-size: 1.3em;
+    }
+
+    .step {
+        padding: 15px;
+        margin-bottom: 20px;
     }
 
     .complementos {
         justify-content: center;
+        gap: 10px;
     }
 
     .option-btn,
     .size-btn,
     .complemento-btn {
         width: calc(50% - 10px);
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+
+    .pix-key {
+        font-size: 1.4em;
+        padding: 12px;
+    }
+
+    .pix-step {
+        padding: 12px;
+    }
+
+    .whatsapp-btn,
+    .pago-btn {
+        padding: 15px 25px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .option-btn,
+    .size-btn,
+    .complemento-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .pix-chave {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-content {
+        padding: 20px;
+    }
+
+    .pix-instructions {
+        font-size: 1em;
+    }
+
+    .input-entrega {
+        padding: 10px;
+        font-size: 0.9em;
     }
 }
 
