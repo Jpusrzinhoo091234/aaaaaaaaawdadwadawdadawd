@@ -1,0 +1,327 @@
+/* Estilos gerais */
+:root {
+    --cor-primaria: #6A0DAD; /* Roxo vibrante */
+    --cor-secundaria: #4A0404; /* Açaí escuro */
+    --cor-destaque: #9D4EDD; /* Roxo neon */
+    --cor-fundo: #1A1A1A; /* Fundo escuro */
+    --cor-texto: #FFFFFF; /* Texto branco */
+    --cor-texto-secundario: #E0E0E0; /* Texto secundário */
+    --borda-radius: 12px;
+    --sombra: 0 4px 8px rgba(0, 0, 0, 0.3);
+    --borda-glow: 0 0 10px rgba(154, 78, 221, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--cor-destaque);
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.8em;
+    text-shadow: 0 0 15px rgba(157, 78, 221, 0.6);
+}
+
+h2 {
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+h3 {
+    color: var(--cor-texto-secundario);
+    margin: 15px 0;
+    font-size: 1.5em;
+}
+
+/* Estilos dos passos */
+.step {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 25px;
+    border-radius: var(--borda-radius);
+    margin-bottom: 30px;
+    box-shadow: var(--sombra);
+    border: 1px solid rgba(154, 78, 221, 0.2);
+}
+
+/* Botões */
+.option-btn,
+.size-btn,
+.complemento-btn {
+    background-color: rgba(106, 13, 173, 0.2);
+    border: 2px solid var(--cor-destaque);
+    color: var(--cor-texto);
+    padding: 15px 25px;
+    margin: 8px;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--borda-glow);
+}
+
+.option-btn:hover,
+.size-btn:hover,
+.complemento-btn:hover {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(157, 78, 221, 0.4);
+}
+
+.option-btn.selected,
+.size-btn.selected,
+.complemento-btn.selected {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.8);
+}
+
+/* Complementos */
+.complementos-section {
+    display: grid;
+    gap: 25px;
+    padding: 10px;
+    background: rgba(106, 13, 173, 0.1);
+    border-radius: var(--borda-radius);
+    border: 1px solid rgba(154, 78, 221, 0.2);
+}
+
+.complementos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    padding: 15px;
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: var(--borda-radius);
+}
+
+/* Ícones SVG */
+.icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* Categorias de Complementos */
+.complementos.frutas .complemento-btn { border-color: #FF6B6B; }
+.complementos.caldas .complemento-btn { border-color: #FFD93D; }
+.complementos.crocantes .complemento-btn { border-color: #6C4A4A; }
+.complementos.cremes .complemento-btn { border-color: #FFECB3; }
+
+.complementos.frutas .complemento-btn:hover { background-color: rgba(255, 107, 107, 0.2); }
+.complementos.caldas .complemento-btn:hover { background-color: rgba(255, 217, 61, 0.2); }
+.complementos.crocantes .complemento-btn:hover { background-color: rgba(108, 74, 74, 0.2); }
+.complementos.cremes .complemento-btn:hover { background-color: rgba(255, 236, 179, 0.2); }
+
+/* Resumo do Pedido */
+.resumo-pedido {
+    background: rgba(26, 26, 26, 0.9);
+    padding: 25px;
+    border-radius: var(--borda-radius);
+    box-shadow: var(--sombra);
+    position: sticky;
+    top: 20px;
+    border: 1px solid rgba(154, 78, 221, 0.3);
+}
+
+.whatsapp-btn {
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto);
+    border: none;
+    padding: 18px 35px;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--borda-glow);
+}
+
+.whatsapp-btn:hover {
+    background-color: var(--cor-secundaria);
+}
+
+/* Modal de Pagamento PIX */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--cor-fundo);
+    border: 1px solid var(--cor-destaque);
+    border-radius: var(--borda-radius);
+    padding: 25px;
+    max-width: 500px;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: var(--sombra);
+}
+
+.upload-area {
+    margin: 20px 0;
+    padding: 20px;
+    border: 2px dashed var(--cor-destaque);
+    border-radius: var(--borda-radius);
+    text-align: center;
+}
+
+.file-input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(154, 78, 221, 0.1);
+    border-radius: var(--borda-radius);
+    border: 1px solid var(--cor-destaque);
+    color: var(--cor-texto);
+}
+
+#preview-area {
+    margin-top: 15px;
+    max-width: 100%;
+}
+
+#preview-area img {
+    max-width: 100%;
+    border-radius: var(--borda-radius);
+}
+
+.pago-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.2em;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.pago-btn:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para os campos de entrega */
+.dados-entrega {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(154, 78, 221, 0.3);
+}
+
+.input-entrega {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    background: rgba(26, 26, 26, 0.9);
+    border: 1px solid rgba(154, 78, 221, 0.3);
+    border-radius: var(--borda-radius);
+    color: var(--cor-texto);
+    font-size: 1em;
+}
+
+.input-entrega:focus {
+    outline: none;
+    border-color: var(--cor-destaque);
+    box-shadow: var(--borda-glow);
+}
+
+.input-entrega::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+select.input-entrega {
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 40px;
+}
+
+select.input-entrega option {
+    background-color: #1a1a1a;
+    color: var(--cor-texto);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .complementos {
+        justify-content: center;
+    }
+
+    .option-btn,
+    .size-btn,
+    .complemento-btn {
+        width: calc(50% - 10px);
+    }
+}
+
+/* Estados iniciais */
+#step2,
+#step3,
+#barca-sizes {
+    display: none;
+}
+
+/* Animações */
+.step,
+.option-btn,
+.size-btn,
+.complemento-btn {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

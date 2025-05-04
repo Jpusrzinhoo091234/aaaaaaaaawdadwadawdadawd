@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ribeirinho Açaí</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='10' fill='%234A0404'/></svg>">
+</head>
+<body>
+    <!-- Incluindo os ícones SVG -->
+    <object data="icons.svg" type="image/svg+xml" style="display: none;"></object>
+    <div class="container">
+        <h1>Ribeirinho Açaí</h1>
+        
+        <div class="steps">
+            <!-- Passo 1: Seleção do tipo -->
+            <div class="step" id="step1">
+                <h2>Passo 1: Selecione a opção</h2>
+                <div class="options">
+                    <button class="option-btn" data-type="copo">Copo de Açaí</button>
+                    <button class="option-btn" data-type="barca">Barca de Açaí</button>
+                </div>
+            </div>
+
+            <!-- Passo 2: Seleção do tamanho -->
+            <div class="step" id="step2">
+                <h2>Passo 2: Selecione o tamanho</h2>
+                <div class="sizes" id="copo-sizes">
+                    <button class="size-btn" data-size="400ml" data-price="12.00">400ml - R$12,00</button>
+                    <button class="size-btn" data-size="500ml" data-price="15.00">500ml - R$15,00</button>
+                    <button class="size-btn" data-size="700ml" data-price="17.00">700ml - R$17,00</button>
+                </div>
+                <div class="sizes" id="barca-sizes">
+                    <button class="size-btn" data-size="pequena" data-price="30.00">Pequena - R$30,00</button>
+                    <button class="size-btn" data-size="media" data-price="40.00">Média - R$40,00</button>
+                    <button class="size-btn" data-size="grande" data-price="50.00">Grande - R$50,00</button>
+                </div>
+            </div>
+
+            <!-- Passo 3: Seleção de complementos -->
+            <div class="step" id="step3">
+                <h2>Passo 3: Selecione os complementos</h2>
+                
+                <div class="complementos-section">
+                    <h3><svg class="icon"><use href="#frutas-icon"/></svg> Frutas</h3>
+                    <div class="complementos frutas">
+                        <button class="complemento-btn" data-tipo="fruta" data-nome="Morango" data-price="2.00">Morango 🍓</button>
+                        <button class="complemento-btn" data-tipo="fruta" data-nome="Banana" data-price="2.00">Banana 🍌</button>
+                        <button class="complemento-btn" data-tipo="fruta" data-nome="Abacaxi" data-price="2.00">Abacaxi 🍍</button>
+                        <button class="complemento-btn" data-tipo="fruta" data-nome="Kiwi" data-price="2.00">Kiwi 🥝</button>
+                        <button class="complemento-btn" data-tipo="fruta" data-nome="Manga" data-price="2.00">Manga 🥭</button>
+                        <button class="complemento-btn" data-tipo="fruta" data-nome="Uva" data-price="2.00">Uva 🍇</button>
+                    </div>
+
+                    <h3><svg class="icon"><use href="#caldas-icon"/></svg> Caldas</h3>
+                    <div class="complementos caldas">
+                        <button class="complemento-btn" data-tipo="calda" data-nome="Leite Condensado" data-price="3.00">Leite Condensado 🍯</button>
+                        <button class="complemento-btn" data-tipo="calda" data-nome="Chocolate" data-price="3.00">Chocolate 🍫</button>
+                        <button class="complemento-btn" data-tipo="calda" data-nome="Morango" data-price="3.00">Morango 🍓</button>
+                    </div>
+
+                    <h3><svg class="icon"><use href="#crocantes-icon"/></svg> Crocantes</h3>
+                    <div class="complementos crocantes">
+                        <button class="complemento-btn" data-tipo="crocante" data-nome="Paçoca" data-price="2.50">Paçoca 🥜</button>
+                        <button class="complemento-btn" data-tipo="crocante" data-nome="Flocos de Arroz" data-price="2.50">Flocos de Arroz 🍚</button>
+                        <button class="complemento-btn" data-tipo="crocante" data-nome="Granulado" data-price="2.50">Granulado 🍫</button>
+                        <button class="complemento-btn" data-tipo="crocante" data-nome="Sucrilhos" data-price="2.50">Sucrilhos 🥣</button>
+                    </div>
+
+                    <h3><svg class="icon"><use href="#cremes-icon"/></svg> Cremes</h3>
+                    <div class="complementos cremes">
+                        <button class="complemento-btn" data-tipo="creme" data-nome="Leite em Pó" data-price="3.50">Leite em Pó 🥛</button>
+                        <button class="complemento-btn" data-tipo="creme" data-nome="Nutella" data-price="3.50">Nutella 🍫</button>
+                        <button class="complemento-btn" data-tipo="creme" data-nome="Ovomaltine" data-price="3.50">Ovomaltine 🍫</button>
+                    </div>
+
+                    <h3><svg class="icon"><use href="#doces-icon"/></svg> Doces</h3>
+                    <div class="complementos doces">
+                        <button class="complemento-btn" data-tipo="doce" data-nome="Jujuba" data-price="2.50">Jujuba 🍬</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumo do Pedido -->
+        <div class="resumo-pedido">
+            <h2>Resumo do Pedido</h2>
+            <div id="resumo-conteudo">
+                <p>Selecione os itens para montar seu pedido</p>
+            </div>
+            <div class="total">
+                <h3>Total: <span id="preco-total">R$0,00</span></h3>
+            </div>
+
+            <!-- Dados de Entrega -->
+            <div class="dados-entrega">
+                <h3>Dados de Entrega</h3>
+                <select id="cidade" class="input-entrega">
+                    <option value="">Selecione a cidade</option>
+                    <option value="Arcozelo">Arcozelo (Frete Grátis)</option>
+                    <option value="Miguel Pereira">Miguel Pereira (Frete Grátis)</option>
+                    <option value="Paty do Alferes">Paty do Alferes (Frete Grátis)</option>
+                    <option value="Portela">Portela (Frete Grátis)</option>
+                </select>
+                <input type="text" id="rua" class="input-entrega" placeholder="Nome da Rua">
+                <input type="text" id="numero" class="input-entrega" placeholder="Número">
+                <input type="text" id="referencia" class="input-entrega" placeholder="Ponto de Referência (opcional)">
+                <input type="text" id="nome-cliente" class="input-entrega" placeholder="Nome do Cliente">
+            </div>
+
+            <button id="enviar-whatsapp" class="whatsapp-btn">Enviar pedido no WhatsApp</button>
+        </div>
+    </div>
+
+    <!-- Modal de Pagamento PIX -->
+    <div id="modal-pix" class="modal">
+        <div class="modal-content">
+            <h2>Pagamento via PIX</h2>
+            <p>Chave PIX: 24981128510</p>
+            <div class="upload-area">
+                <p>Envie o comprovante de pagamento:</p>
+                <input type="file" id="comprovante" accept="image/*,.pdf" class="file-input">
+                <div id="preview-area"></div>
+            </div>
+            <button id="confirmar-pagamento" class="pago-btn">Pago</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
