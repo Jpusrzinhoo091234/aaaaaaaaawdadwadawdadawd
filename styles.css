@@ -182,9 +182,9 @@ h3 {
     background: var(--cor-fundo);
     border: 2px solid var(--cor-destaque);
     border-radius: var(--borda-radius);
-    padding: 30px;
-    max-width: 500px;
-    width: 90%;
+    padding: 40px;
+    max-width: 550px;
+    width: 95%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -193,72 +193,125 @@ h3 {
     text-align: center;
 }
 
-.pix-info {
-    margin: 25px 0;
-    padding: 20px;
-    background: rgba(157, 78, 221, 0.1);
-    border-radius: var(--borda-radius);
-    border: 1px solid var(--cor-destaque);
+.modal-content h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    color: var(--cor-destaque);
+    text-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
 }
 
-.pix-instrucao {
+.pix-info {
+    margin: 25px 0;
+    padding: 30px;
+    background: rgba(157, 78, 221, 0.1);
+    border-radius: var(--borda-radius);
+    border: 2px solid var(--cor-destaque);
+    box-shadow: var(--borda-glow);
+}
+
+.pix-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.pix-step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    padding: 15px;
+    background: rgba(26, 26, 26, 0.6);
+    border-radius: var(--borda-radius);
+    border: 1px solid rgba(157, 78, 221, 0.3);
+}
+
+.step-number {
+    background: var(--cor-destaque);
+    color: var(--cor-texto);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(157, 78, 221, 0.6);
+}
+
+.pix-step p {
+    margin: 0;
+    color: var(--cor-texto);
     font-size: 1.1em;
-    color: var(--cor-texto-secundario);
-    margin-bottom: 15px;
+    line-height: 1.4;
 }
 
 .pix-chave {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin: 20px 0;
-    padding: 15px;
+    gap: 15px;
+    margin: 15px 0;
+    padding: 20px;
     background: rgba(26, 26, 26, 0.8);
     border-radius: var(--borda-radius);
+    border: 2px dashed var(--cor-destaque);
 }
 
 #chave-pix {
-    font-size: 1.4em;
+    font-size: 1.6em;
     font-weight: bold;
     color: var(--cor-destaque);
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.4);
 }
 
 .copiar-btn {
     background: var(--cor-destaque);
     color: var(--cor-texto);
     border: none;
-    padding: 8px 15px;
+    padding: 12px 20px;
     border-radius: var(--borda-radius);
     cursor: pointer;
-    font-size: 0.9em;
+    font-size: 1.1em;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .copiar-btn:hover {
     background: var(--cor-primaria);
     transform: translateY(-2px);
+    box-shadow: var(--borda-glow);
 }
 
-.pix-instrucao-secundaria {
-    font-size: 0.9em;
-    color: var(--cor-texto-secundario);
-    margin-top: 15px;
+.pix-confirmation {
+    margin-top: 35px;
 }
 
 .pago-btn {
     background: var(--cor-destaque);
     color: var(--cor-texto);
     border: none;
-    padding: 15px 30px;
+    padding: 18px 30px;
     border-radius: var(--borda-radius);
     cursor: pointer;
-    font-size: 1.2em;
+    font-size: 1.3em;
     width: 100%;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .pago-btn:hover {
