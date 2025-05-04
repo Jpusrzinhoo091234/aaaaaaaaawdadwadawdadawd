@@ -117,13 +117,15 @@
     <div id="modal-pix" class="modal">
         <div class="modal-content">
             <h2>Pagamento via PIX</h2>
-            <p>Chave PIX: 24981128510</p>
-            <div class="upload-area">
-                <p>Envie o comprovante de pagamento:</p>
-                <input type="file" id="comprovante" accept="image/*,.pdf" class="file-input">
-                <div id="preview-area"></div>
+            <div class="pix-info">
+                <p class="pix-instrucao">Copie a chave PIX abaixo:</p>
+                <div class="pix-chave">
+                    <span id="chave-pix">24981128510</span>
+                    <button id="copiar-pix" class="copiar-btn" onclick="copiarChavePix()">Copiar</button>
+                </div>
+                <p class="pix-instrucao-secundaria">Após realizar o pagamento, clique em "Confirmar Pagamento"</p>
             </div>
-            <button id="confirmar-pagamento" class="pago-btn">Pago</button>
+            <button id="confirmar-pagamento" class="pago-btn">Confirmar Pagamento</button>
         </div>
     </div>
 

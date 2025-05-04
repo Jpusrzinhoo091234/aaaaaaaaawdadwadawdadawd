@@ -153,9 +153,6 @@ function atualizarResumo() {
 
 // Variáveis para o modal de pagamento
 const modalPix = document.getElementById('modal-pix');
-const inputComprovante = document.getElementById('comprovante');
-const previewArea = document.getElementById('preview-area');
-let comprovanteFile = null;
 
 // Função para mostrar o modal
 function mostrarModal() {
@@ -174,22 +171,21 @@ modalPix.addEventListener('click', (e) => {
     }
 });
 
-// Manipular upload do comprovante
-inputComprovante.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (file) {
-        comprovanteFile = file;
-        if (file.type.startsWith('image/')) {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                previewArea.innerHTML = `<img src="${e.target.result}" alt="Comprovante">`;
-            };
-            reader.readAsDataURL(file);
-        } else if (file.type === 'application/pdf') {
-            previewArea.innerHTML = `<p>PDF selecionado: ${file.name}</p>`;
-        }
-    }
-});
+// Função para copiar a chave PIX
+function copiarChavePix() {
+    const chavePix = document.getElementById('chave-pix').textContent;
+    navigator.clipboard.writeText(chavePix)
+        .then(() => {
+            const botaoCopiar = document.getElementById('copiar-pix');
+            botaoCopiar.textContent = 'Copiado!';
+            setTimeout(() => {
+                botaoCopiar.textContent = 'Copiar';
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Erro ao copiar: ', err);
+        });
+}
 
 // Evento para enviar pedido no WhatsApp
 document.getElementById('enviar-whatsapp').addEventListener('click', () => {
@@ -208,10 +204,6 @@ document.getElementById('enviar-whatsapp').addEventListener('click', () => {
 
 // Evento para confirmar pagamento
 document.getElementById('confirmar-pagamento').addEventListener('click', () => {
-    if (!comprovanteFile) {
-        alert('Por favor, envie o comprovante de pagamento!');
-        return;
-    }
 
     const tipoFormatado = pedidoAtual.tipo === 'copo' ? 'Copo' : 'Barca';
     let mensagem = `Olá! Quero um pedido de:\n\n*${tipoFormatado} de Açaí ${pedidoAtual.tamanho}* (R$${pedidoAtual.preco.toFixed(2)})`;

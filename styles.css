@@ -180,9 +180,9 @@ h3 {
 
 .modal-content {
     background: var(--cor-fundo);
-    border: 1px solid var(--cor-destaque);
+    border: 2px solid var(--cor-destaque);
     border-radius: var(--borda-radius);
-    padding: 25px;
+    padding: 30px;
     max-width: 500px;
     width: 90%;
     position: absolute;
@@ -190,51 +190,125 @@ h3 {
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: var(--sombra);
-}
-
-.upload-area {
-    margin: 20px 0;
-    padding: 20px;
-    border: 2px dashed var(--cor-destaque);
-    border-radius: var(--borda-radius);
     text-align: center;
 }
 
-.file-input {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    background: rgba(154, 78, 221, 0.1);
+.pix-info {
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(157, 78, 221, 0.1);
     border-radius: var(--borda-radius);
     border: 1px solid var(--cor-destaque);
-    color: var(--cor-texto);
 }
 
-#preview-area {
-    margin-top: 15px;
-    max-width: 100%;
+.pix-instrucao {
+    font-size: 1.1em;
+    color: var(--cor-texto-secundario);
+    margin-bottom: 15px;
 }
 
-#preview-area img {
-    max-width: 100%;
+.pix-chave {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 15px;
+    background: rgba(26, 26, 26, 0.8);
     border-radius: var(--borda-radius);
+}
+
+#chave-pix {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--cor-destaque);
+    letter-spacing: 1px;
+}
+
+.copiar-btn {
+    background: var(--cor-destaque);
+    color: var(--cor-texto);
+    border: none;
+    padding: 8px 15px;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.copiar-btn:hover {
+    background: var(--cor-primaria);
+    transform: translateY(-2px);
+}
+
+.pix-instrucao-secundaria {
+    font-size: 0.9em;
+    color: var(--cor-texto-secundario);
+    margin-top: 15px;
 }
 
 .pago-btn {
-    background-color: #4CAF50;
-    color: white;
+    background: var(--cor-destaque);
+    color: var(--cor-texto);
     border: none;
     padding: 15px 30px;
     border-radius: var(--borda-radius);
     cursor: pointer;
-    width: 100%;
     font-size: 1.2em;
-    margin-top: 15px;
+    width: 100%;
     transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .pago-btn:hover {
-    background-color: #45a049;
+    background: var(--cor-primaria);
+    transform: translateY(-2px);
+    box-shadow: var(--borda-glow);
+}
+
+.pix-info {
+    text-align: center;
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(157, 78, 221, 0.1);
+    border: 2px solid var(--cor-destaque);
+    border-radius: var(--borda-radius);
+    box-shadow: var(--borda-glow);
+}
+
+.pix-key {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--cor-destaque);
+    margin: 15px 0;
+    padding: 15px;
+    background: rgba(26, 26, 26, 0.9);
+    border-radius: var(--borda-radius);
+    border: 1px solid var(--cor-destaque);
+    text-shadow: 0 0 10px rgba(157, 78, 221, 0.4);
+}
+
+.pix-instructions {
+    color: var(--cor-texto-secundario);
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-top: 20px;
+    text-align: left;
+    padding: 0 15px;
+}
+
+.pix-instructions li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.pix-instructions li:before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--cor-destaque);
 }
 
 /* Estilos para os campos de entrega */
